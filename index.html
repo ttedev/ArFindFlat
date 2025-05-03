@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WebAR - Flèche GPS</title>
+    <title>WebAR Flèche GPS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/ar.js@3.4.2/aframe/build/aframe-ar.min.js"></script>
     <style>
       body, html {
         margin: 0;
+        padding: 0;
         overflow: hidden;
         height: 100%;
+        width: 100%;
       }
     </style>
   </head>
@@ -19,18 +22,15 @@
       arjs="sourceType: webcam; debugUIEnabled: false;"
       device-orientation-permission-ui="enabled: true"
     >
-
-      <!-- Caméra -->
       <a-camera gps-camera rotation-reader></a-camera>
 
-      <!-- Flèche 3D point GPS cible -->
-      <a-entity
-        gps-entity-place="latitude: 48.8584; longitude: 2.2945;"  <!-- Coordonnées à changer -->
-        gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Arrow/glTF/Arrow.gltf"
-        scale="5 5 5"
-        rotation="0 0 0"
-      ></a-entity>
-
+      <!-- Coordonnées de destination à modifier si besoin -->
+      <a-entity 
+        gps-entity-place="latitude: 48.8584; longitude: 2.2945;" 
+        gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Arrow/glTF/Arrow.gltf" 
+        scale="5 5 5" 
+        rotation="0 0 0">
+      </a-entity>
     </a-scene>
   </body>
 </html>
